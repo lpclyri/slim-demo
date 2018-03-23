@@ -1,9 +1,10 @@
 <?php
 
-// namespace App;
+namespace App;
 
-$db = require_once __DIR__ . '/../src/database.php';
-define('DB', $db);
+use PDO;
+// $db = 
+// define('DB', $db);
 
 class TestRepository {
 	

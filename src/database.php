@@ -2,7 +2,7 @@
 
 return array(
 	'host'      => '127.0.0.1',
-	'user'      => '',
+	'user'      => 'root',
 	'pass'      => '',
 	'database'  => 'slim',
 	'port'      => '3306'

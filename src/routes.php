@@ -2,8 +2,10 @@
 
 use Slim\Http\Request;
 use Slim\Http\Response;
+use App\TestController;
+use App\TestRepository;
 
-require_once __DIR__ . '/../app/TestController.php';
+// require_once 'auto_load.php';
 // Routes
 
 // $app->get('/{name}', function (Request $request, Response $response, array $args) {
@@ -15,13 +17,13 @@ require_once __DIR__ . '/../app/TestController.php';
 // });
 
 $app->get('/users', function(Request $request, Response $response) {
-	$test = new TestController();
+	$test = new TestController(new TestRepository());
 	$test->index();
 });
 
 $app->get('/users/{id}', function(Request $request) {
 	$id = $request->getAttribute('id');
-	$test = new TestController();
+	$test = new TestController(new TestRepository());
 	$test->show($id);
 });
 

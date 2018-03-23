@@ -11,6 +11,9 @@ if (PHP_SAPI == 'cli-server') {
 
 require __DIR__ . '/../vendor/autoload.php';
 
+$dbconfig = require_once __DIR__ . '/../src/database.php';
+define('DB', $dbconfig);
+
 session_start();
 
 // Instantiate the app
@@ -23,6 +26,7 @@ require __DIR__ . '/../src/dependencies.php';
 // Register middleware
 require __DIR__ . '/../src/middleware.php';
 
+require_once __DIR__ . '/../src/Autoloader.php';
 // Register routes
 require __DIR__ . '/../src/routes.php';
 

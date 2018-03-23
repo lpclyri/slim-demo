@@ -1,13 +1,16 @@
 <?php
 
-require_once __DIR__ . '/TestRepository.php';
+namespace App;
+
+use App\TestRepository;
 
 class TestController {
 	
 	protected $model;
 
-	public function __construct() {
-		$this->model = new TestRepository();
+	public function __construct(TestRepository $testRepository) {
+		$this->model = $testRepository;
+		// $this->model = new TestRepository();
 	}
 
 	// get users
